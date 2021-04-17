@@ -1,1 +1,22 @@
 <h2>Available drones</h2>
+
+<!-- iteration 2.3 -->
+<ul>
+    {{#each drones}}
+        <div class="card w-75">
+            <div class="card-body">
+                <li> 
+                    <a href="/drones/{{this._id}}/edit">
+                        <h5 class="card-title">{{this.name}}</h5>
+                    </a>
+                    <!-- decided to keep this info out for stylish purposes 
+                    <p class="card-text">{{this.propellers}}, {{this.speed}}</p> -->   
+                </li>
+                <form action="/drones/{{this._id}}/delete" method="POST"> 
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    {{/each}}
+</ul>
+
